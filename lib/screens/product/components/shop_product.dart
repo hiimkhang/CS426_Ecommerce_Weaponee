@@ -62,7 +62,7 @@ class ShopProductDisplay extends StatelessWidget {
             width: 150,
             child: Transform.scale(
               scale: 1.2,
-              child: Image.asset('assets/bottom_yellow.png'),
+              child: Image.asset('assets/bottom_yellow1.png'),
             ),
           ),
         ),

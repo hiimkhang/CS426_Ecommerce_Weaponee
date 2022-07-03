@@ -56,7 +56,7 @@ class _ProductPageState extends State<ProductPage> {
     );
 
     return Scaffold(
-      backgroundColor: yellow,
+      backgroundColor: lightGrey,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -71,11 +71,11 @@ class _ProductPageState extends State<ProductPage> {
                 .push(MaterialPageRoute(builder: (_) => SearchPage())),
           )
         ],
-        title: Text(
-          'Headphones',
-          style: const TextStyle(
-              color: darkGrey, fontWeight: FontWeight.w500, fontSize: 18.0),
-        ),
+        // title: Text(
+        //   'Headphones',
+        //   style: const TextStyle(
+        //       color: darkGrey, fontWeight: FontWeight.w500, fontSize: 18.0),
+        // ),
       ),
       body: Stack(
         children: <Widget>[
@@ -113,7 +113,7 @@ class _ProductPageState extends State<ProductPage> {
                         width: 90,
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(253, 192, 84, 1),
+                          color: darkGrey,
                           borderRadius: BorderRadius.circular(4.0),
                           border:
                               Border.all(color: Color(0xFFFFFFFF), width: 0.5),
@@ -155,8 +155,8 @@ class _ProductPageState extends State<ProductPage> {
                   gradient: LinearGradient(
                       colors: [
                     Color.fromRGBO(255, 255, 255, 0),
-                    Color.fromRGBO(253, 192, 84, 0.5),
-                    Color.fromRGBO(253, 192, 84, 1),
+                    Color.fromARGB(126, 22, 22, 22),
+                    Color.fromARGB(255, 26, 26, 26),
                   ],
                       begin: FractionalOffset.topCenter,
                       end: FractionalOffset.bottomCenter)),

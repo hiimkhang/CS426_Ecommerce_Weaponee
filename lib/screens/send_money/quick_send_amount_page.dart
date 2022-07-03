@@ -48,10 +48,8 @@ class QuickSendAmountPage extends StatelessWidget {
             IconButton(
               icon: Image.asset('assets/icons/cut_qr.png'),
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (_) =>
-                          ReceivePaymentPage(user)));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => ReceivePaymentPage(user)));
               },
             )
           ],
@@ -78,7 +76,7 @@ class QuickSendAmountPage extends StatelessWidget {
                               height: MediaQuery.of(context).size.height / 2.3,
                               padding: const EdgeInsets.all(16.0),
                               width: double.infinity,
-                              color: yellow,
+                              color: darkGrey,
                               child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
@@ -143,7 +141,7 @@ class QuickSendAmountPage extends StatelessWidget {
                                           ),
                                         ),
                                       )),
-                                  Text('You can only send \$54.24',
+                                  Text('You can only send \$1000',
                                       style: TextStyle(color: Colors.white54)),
                                 ],
                               ),

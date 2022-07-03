@@ -43,7 +43,7 @@ class NotificationsPage extends StatelessWidget {
                             children: <Widget>[
                               CircleAvatar(
                                 backgroundImage: AssetImage(
-                                  'assets/background.jpg',
+                                  'assets/background1.jpg',
                                 ),
                                 maxRadius: 24,
                               ),
@@ -59,7 +59,7 @@ class NotificationsPage extends StatelessWidget {
                                         ),
                                         children: [
                                           TextSpan(
-                                              text: 'Sai Sankar Ram',
+                                              text: 'Khang',
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                               )),
@@ -131,7 +131,7 @@ class NotificationsPage extends StatelessWidget {
                             children: <Widget>[
                               CircleAvatar(
                                 backgroundImage: AssetImage(
-                                  'assets/background.jpg',
+                                  'assets/background1.jpg',
                                 ),
                                 maxRadius: 24,
                               ),
@@ -147,7 +147,7 @@ class NotificationsPage extends StatelessWidget {
                                         ),
                                         children: [
                                           TextSpan(
-                                              text: 'Sai Sankar Ram',
+                                              text: 'Khang',
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                               )),
@@ -231,7 +231,7 @@ class NotificationsPage extends StatelessWidget {
                                       child: Transform.scale(
                                         scale: 1.2,
                                         child: Image.asset(
-                                            'assets/bottom_yellow.png'),
+                                            'assets/bottom_yellow1.png'),
                                       ),
                                     ),
                                   ),
@@ -240,24 +240,23 @@ class NotificationsPage extends StatelessWidget {
                                     left: 10.0,
                                     child: SizedBox(
                                         height: 80,
-                                        width: 80,
-                                        child: Image.asset(
-                                            'assets/headphones.png')),
+                                        width: 100,
+                                        child:
+                                            Image.asset('assets/m9_gold.png')),
                                   )
                                 ]),
                               ),
                               Flexible(
                                 child: Column(children: [
-                                  Text(
-                                      'Boat Rockerz 350 On-Ear Bluetooth Headphones',
+                                  Text('M9 Bayonet Tiger Tooth',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 10)),
-                                  SizedBox(height:4.0),
+                                          fontSize: 16)),
+                                  SizedBox(height: 4.0),
                                   Text(
                                       'Your package has been delivered. Thanks for shopping!',
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 10))
+                                          color: Colors.grey, fontSize: 14))
                                 ]),
                               )
                             ]),
@@ -269,7 +268,7 @@ class NotificationsPage extends StatelessWidget {
                             child: Container(
                                 padding: const EdgeInsets.all(14.0),
                                 decoration: BoxDecoration(
-                                    color: yellow,
+                                    color: darkGrey,
                                     borderRadius: BorderRadius.only(
                                         bottomRight: Radius.circular(5.0),
                                         bottomLeft: Radius.circular(5.0))),
@@ -280,7 +279,7 @@ class NotificationsPage extends StatelessWidget {
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 10),
+                                          fontSize: 14),
                                     ))),
                           )
                         ],
@@ -311,44 +310,44 @@ class NotificationsPage extends StatelessWidget {
                                       child: Transform.scale(
                                         scale: 1.2,
                                         child: Image.asset(
-                                            'assets/bottom_yellow.png'),
+                                            'assets/bottom_yellow1.png'),
                                       ),
                                     ),
                                   ),
                                   Positioned(
                                     top: 8.0,
-                                    left: 10.0,
+                                    left: -7.0,
                                     child: SizedBox(
-                                        height: 80,
-                                        width: 80,
+                                        height: 100,
+                                        width: 120,
                                         child: Image.asset(
-                                            'assets/headphones_3.png')),
+                                            'assets/m4a4_purple.png')),
                                   )
                                 ]),
                               ),
                               Flexible(
                                 child: Column(children: [
-                                  Text(
-                                      'Boat Rockerz 440 On-Ear Bluetooth Headphones',
+                                  Text('M4A4 Neo-Noir',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 10)),
-                                  SizedBox(height:4.0),
+                                          fontSize: 16)),
+                                  SizedBox(height: 4.0),
                                   Text(
                                       'Your package has been dispatched. You can keep track of your product.',
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 10))
+                                          color: Colors.grey, fontSize: 14))
                                 ]),
                               )
                             ]),
                           ),
                           InkWell(
                             onTap: () => Navigator.of(context).push(
-                                MaterialPageRoute(builder: (_) => TrackingPage())),
+                                MaterialPageRoute(
+                                    builder: (_) => TrackingPage())),
                             child: Container(
                                 padding: const EdgeInsets.all(14.0),
                                 decoration: BoxDecoration(
-                                    color: yellow,
+                                    color: darkGrey,
                                     borderRadius: BorderRadius.only(
                                         bottomRight: Radius.circular(5.0),
                                         bottomLeft: Radius.circular(5.0))),
@@ -359,7 +358,7 @@ class NotificationsPage extends StatelessWidget {
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 10),
+                                          fontSize: 14),
                                     ))),
                           )
                         ],

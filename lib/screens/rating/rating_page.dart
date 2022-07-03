@@ -56,18 +56,18 @@ class _RatingPageState extends State<RatingPage> {
                             height: 92,
                             width: 92,
                             decoration: BoxDecoration(
-                                color: yellow,
+                                color: lightGrey,
                                 shape: BoxShape.circle,
                                 boxShadow: shadow,
                                 border: Border.all(
                                     width: 8.0, color: Colors.white)),
-                            child: Image.asset('assets/headphones.png'),
+                            child: Image.asset('assets/m9_gold.png'),
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 72.0, vertical: 16.0),
                             child: Text(
-                              'Boat Rockerz 350 On-Ear Bluetooth Headphones',
+                              'M9 Bayonet Tiger Tooth',
                               style: TextStyle(fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
@@ -95,7 +95,7 @@ class _RatingPageState extends State<RatingPage> {
                                   ignoreGestures: true,
                                   itemSize: 20,
                                   allowHalfRating: true,
-                                  initialRating: 1,
+                                  initialRating: 4,
                                   itemPadding:
                                       EdgeInsets.symmetric(horizontal: 4.0),
                                   ratingWidget: RatingWidget(
@@ -151,7 +151,7 @@ class _RatingPageState extends State<RatingPage> {
                                         child: CircleAvatar(
                                           maxRadius: 14,
                                           backgroundImage: AssetImage(
-                                              'assets/background.jpg'),
+                                              'assets/background2.jpg'),
                                         ),
                                       ),
                                       Expanded(
@@ -166,7 +166,7 @@ class _RatingPageState extends State<RatingPage> {
                                                       .spaceBetween,
                                               children: <Widget>[
                                                 Text(
-                                                  'Billy Holand',
+                                                  'Khang lựu đạn',
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.bold),
@@ -212,7 +212,7 @@ class _RatingPageState extends State<RatingPage> {
                                               ),
                                             ),
                                             Text(
-                                              'Not as I expected! ... I`m really sad',
+                                              'Dao hơi cùn...',
                                               style: TextStyle(
                                                 color: Colors.grey,
                                               ),

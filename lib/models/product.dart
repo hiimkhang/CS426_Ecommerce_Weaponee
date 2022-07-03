@@ -1,4 +1,4 @@
-class Product{
+class Product {
   String image;
   String name;
   String description;

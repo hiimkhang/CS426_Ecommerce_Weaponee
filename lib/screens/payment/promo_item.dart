@@ -36,7 +36,7 @@ class PromoItem extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  'Boat Rockerz 400 On-Ear Bluetooth Headphones',
+                                  'M9 Bayonet Crystal',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -51,9 +51,10 @@ class PromoItem extends StatelessWidget {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
-                                      ColorOption(Colors.red),
+                                      ColorOption(
+                                          Color.fromARGB(255, 157, 106, 103)),
                                       Text(
-                                        '\$58.24',
+                                        '\$749',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             color: darkGrey,
@@ -130,11 +131,8 @@ class PromoItem extends StatelessWidget {
           Positioned(
             top: 5,
             child: ShopProductDisplay(
-              Product(
-                  'assets/headphones.png',
-                  'Boat roackerz 400 On-Ear Bluetooth Headphones',
-                  'description',
-                  45.3),
+              Product('assets/m9_green.png', 'M9 Bayonet Crystal',
+                  'description', 749),
               onPressed: () {},
             ),
           ),

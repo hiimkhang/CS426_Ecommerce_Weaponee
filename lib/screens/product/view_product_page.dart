@@ -20,6 +20,7 @@ class ViewProductPage extends StatefulWidget {
 
 class _ViewProductPageState extends State<ViewProductPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  late Product product;
 
   int active = 0;
 
@@ -69,7 +70,7 @@ class _ViewProductPageState extends State<ViewProductPage> {
 
     return Scaffold(
         key: _scaffoldKey,
-        backgroundColor: yellow,
+        backgroundColor: lightGrey,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
@@ -85,7 +86,7 @@ class _ViewProductPageState extends State<ViewProductPage> {
             )
           ],
           title: Text(
-            'Headphones',
+            '',
             style: const TextStyle(
                 color: darkGrey,
                 fontWeight: FontWeight.w500,
@@ -107,13 +108,7 @@ class _ViewProductPageState extends State<ViewProductPage> {
                   padding: const EdgeInsets.all(24.0),
                   child: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
                     Flexible(
-                      child: ColorList([
-                        Colors.red,
-                        Colors.blue,
-                        Colors.purple,
-                        Colors.green,
-                        Colors.yellow
-                      ]),
+                      child: ColorList([Colors.black, Colors.white]),
                     ),
                     RawMaterialButton(
                       onPressed: () {

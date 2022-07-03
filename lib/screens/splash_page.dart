@@ -47,14 +47,14 @@ class _SplashScreenState extends State<SplashScreen>
   void navigationPage() {
     Navigator.of(context)
         // .pushReplacement(MaterialPageRoute(builder: (_) => WelcomeBackPage()));
-        .pushReplacement(MaterialPageRoute(builder: (_) => MainPage()));
+        .pushReplacement(MaterialPageRoute(builder: (_) => IntroPage()));
   }
 
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)),
+              image: AssetImage('assets/background2.jpg'), fit: BoxFit.cover)),
       child: Container(
         decoration: BoxDecoration(color: transparentYellow),
         child: SafeArea(
@@ -64,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen>
                 Expanded(
                   child: Opacity(
                       opacity: opacity.value,
-                      child: new Image.asset('assets/logo.png')),
+                      child: new Image.asset('assets/logo1.png')),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -74,7 +74,7 @@ class _SplashScreenState extends State<SplashScreen>
                         children: [
                           TextSpan(text: 'Powered by '),
                           TextSpan(
-                              text: 'int2.io',
+                              text: 'anh Khang',
                               style: TextStyle(fontWeight: FontWeight.bold))
                         ]),
                   ),

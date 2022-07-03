@@ -17,8 +17,9 @@ class _IntroPageState extends State<IntroPage> {
       child: Container(
 //      width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-            color: Colors.grey[100],
-            image: DecorationImage(image: AssetImage('assets/background.png'))),
+            color: Color.fromARGB(255, 220, 211, 211),
+            image:
+                DecorationImage(image: AssetImage('assets/background2.png'))),
         child: Stack(
           children: <Widget>[
             PageView(
@@ -35,15 +36,15 @@ class _IntroPageState extends State<IntroPage> {
                   children: <Widget>[
                     Center(
                       child: Image.asset(
-                        'assets/firstScreen.png',
-                        height: 200,
-                        width: 200,
+                        'assets/intro1.png',
+                        height: 350,
+                        width: 350,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32),
                       child: Text(
-                        'Get Any Thing Online',
+                        'Get Any Weapon Online',
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
@@ -53,9 +54,9 @@ class _IntroPageState extends State<IntroPage> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 32, vertical: 16.0),
                       child: Text(
-                        'You can buy anything ranging from digital products to hardware within few clicks.',
+                        'You can buy anything kinds of weapon from symbolic knifes to standout guns within few clicks.',
                         textAlign: TextAlign.right,
-                        style: TextStyle(color: Colors.grey, fontSize: 12.0),
+                        style: TextStyle(color: Colors.black, fontSize: 14.0),
                       ),
                     ),
                   ],
@@ -84,9 +85,9 @@ class _IntroPageState extends State<IntroPage> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 32, vertical: 16.0),
                       child: Text(
-                        'We will ship to anywhere in the world, With 30 day 100% money back policy.',
+                        'We will ship to anywhere (if possible) in the world, With 30 day 100% money back policy.',
                         textAlign: TextAlign.right,
-                        style: TextStyle(color: Colors.grey, fontSize: 12.0),
+                        style: TextStyle(color: Colors.black, fontSize: 14.0),
                       ),
                     ),
                   ],
@@ -97,7 +98,7 @@ class _IntroPageState extends State<IntroPage> {
                   children: <Widget>[
                     Center(
                       child: Image.asset(
-                        'assets/thirdScreen.png',
+                        'assets/intro3.png',
                         height: 200,
                         width: 200,
                       ),
@@ -105,7 +106,7 @@ class _IntroPageState extends State<IntroPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32),
                       child: Text(
-                        'On-time delivery',
+                        'Delivery tracking',
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
@@ -117,7 +118,7 @@ class _IntroPageState extends State<IntroPage> {
                       child: Text(
                         'You can track your product with our powerful tracking service.',
                         textAlign: TextAlign.right,
-                        style: TextStyle(color: Colors.grey, fontSize: 12.0),
+                        style: TextStyle(color: Colors.black, fontSize: 14.0),
                       ),
                     ),
                   ],
@@ -140,7 +141,7 @@ class _IntroPageState extends State<IntroPage> {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(color: Colors.black, width: 2),
-                              color: pageIndex == 0 ? yellow : Colors.white),
+                              color: pageIndex == 0 ? lightGrey : Colors.white),
                         ),
                         Container(
                           margin: EdgeInsets.all(8.0),
@@ -149,7 +150,7 @@ class _IntroPageState extends State<IntroPage> {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(color: Colors.black, width: 2),
-                              color: pageIndex == 1 ? yellow : Colors.white),
+                              color: pageIndex == 1 ? lightGrey : Colors.white),
                         ),
                         Container(
                           margin: EdgeInsets.all(8.0),
@@ -158,7 +159,7 @@ class _IntroPageState extends State<IntroPage> {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(color: Colors.black, width: 2),
-                              color: pageIndex == 2 ? yellow : Colors.white),
+                              color: pageIndex == 2 ? lightGrey : Colors.white),
                         )
                       ],
                     ),

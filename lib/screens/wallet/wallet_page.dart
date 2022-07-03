@@ -99,7 +99,7 @@ class _WalletPageState extends State<WalletPage> with TickerProviderStateMixin {
                           ),
                         ),
                         SizedBox(width: 8.0),
-                        Text('54.24',
+                        Text('1000',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 48,

@@ -21,12 +21,12 @@ class ProfilePage extends StatelessWidget {
               children: <Widget>[
                 CircleAvatar(
                   maxRadius: 48,
-                  backgroundImage: AssetImage('assets/background.jpg'),
+                  backgroundImage: AssetImage('assets/background1.jpg'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'Rose Helbert',
+                    'Khang va Quoc',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -41,7 +41,7 @@ class ProfilePage extends StatelessWidget {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                            color: transparentYellow,
+                            color: lightGrey,
                             blurRadius: 4,
                             spreadRadius: 1,
                             offset: Offset(0, 1))
@@ -56,7 +56,7 @@ class ProfilePage extends StatelessWidget {
                           children: <Widget>[
                             IconButton(
                               icon: Image.asset('assets/icons/wallet.png'),
-                              onPressed:()=> Navigator.of(context).push(
+                              onPressed: () => Navigator.of(context).push(
                                   MaterialPageRoute(
                                       builder: (_) => WalletPage())),
                             ),
@@ -72,7 +72,8 @@ class ProfilePage extends StatelessWidget {
                             IconButton(
                               icon: Image.asset('assets/icons/truck.png'),
                               onPressed: () => Navigator.of(context).push(
-                                MaterialPageRoute(builder: (_) => TrackingPage())),
+                                  MaterialPageRoute(
+                                      builder: (_) => TrackingPage())),
                             ),
                             Text(
                               'Shipped',
@@ -85,9 +86,7 @@ class ProfilePage extends StatelessWidget {
                           children: <Widget>[
                             IconButton(
                               icon: Image.asset('assets/icons/card.png'),
-                              onPressed:()=> Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (_) => PaymentPage())),
+                              onPressed: () {},
                             ),
                             Text(
                               'Payment',
@@ -99,7 +98,8 @@ class ProfilePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             IconButton(
-                              icon: Image.asset('assets/icons/contact_us.png'), onPressed: () {},
+                              icon: Image.asset('assets/icons/contact_us.png'),
+                              onPressed: () {},
                             ),
                             Text(
                               'Support',
@@ -114,10 +114,15 @@ class ProfilePage extends StatelessWidget {
                 ListTile(
                   title: Text('Settings'),
                   subtitle: Text('Privacy and logout'),
-                  leading: Image.asset('assets/icons/settings_icon.png', fit: BoxFit.scaleDown, width: 30, height: 30,),
-                  trailing: Icon(Icons.chevron_right, color: yellow),
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => SettingsPage())),
+                  leading: Image.asset(
+                    'assets/icons/settings_icon.png',
+                    fit: BoxFit.scaleDown,
+                    width: 30,
+                    height: 30,
+                  ),
+                  trailing: Icon(Icons.chevron_right, color: darkGrey),
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => SettingsPage())),
                 ),
                 Divider(),
                 ListTile(
@@ -126,7 +131,7 @@ class ProfilePage extends StatelessWidget {
                   leading: Image.asset('assets/icons/support.png'),
                   trailing: Icon(
                     Icons.chevron_right,
-                    color: yellow,
+                    color: darkGrey,
                   ),
                 ),
                 Divider(),
@@ -134,9 +139,9 @@ class ProfilePage extends StatelessWidget {
                   title: Text('FAQ'),
                   subtitle: Text('Questions and Answer'),
                   leading: Image.asset('assets/icons/faq.png'),
-                  trailing: Icon(Icons.chevron_right, color: yellow),
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => FaqPage())),
+                  trailing: Icon(Icons.chevron_right, color: darkGrey),
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => FaqPage())),
                 ),
                 Divider(),
               ],

@@ -1,33 +1,31 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/models/product.dart';
+import 'package:ecommerce_int2/screens/main/main_page.dart';
+import 'package:ecommerce_int2/screens/product/view_product_page.dart';
 import 'package:ecommerce_int2/screens/shop/check_out_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'shop_product.dart';
 
 class ShopBottomSheet extends StatefulWidget {
+  final Product product;
+
+  ShopBottomSheet({required this.product});
+
   @override
-  _ShopBottomSheetState createState() => _ShopBottomSheetState();
+  _ShopBottomSheetState createState() => _ShopBottomSheetState(product);
 }
 
 class _ShopBottomSheetState extends State<ShopBottomSheet> {
-  List<Product> products = [
-    Product(
-        'assets/headphones.png',
-        'Boat roackerz 400 On-Ear Bluetooth Headphones',
-        'description',
-        45.3),
-    Product(
-        'assets/headphones_2.png',
-        'Boat roackerz 100 On-Ear Bluetooth Headphones',
-        'description',
-        22.3),
-    Product(
-        'assets/headphones_3.png',
-        'Boat roackerz 300 On-Ear Bluetooth Headphones',
-        'description',
-        58.3)
-  ];
+  final Product product;
+
+  _ShopBottomSheetState(this.product);
+
+  void initState() {
+    super.initState();
+    productsInCart.add(product);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +43,40 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
                 ? 20
                 : MediaQuery.of(context).padding.bottom),
         child: Center(
-            child: new Text("Confirm",
+            child: new Text("Go to checkout",
+                style: const TextStyle(
+                    color: const Color(0xfffefefe),
+                    fontWeight: FontWeight.w600,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 20.0))),
+        decoration: BoxDecoration(
+            gradient: mainButton,
+            boxShadow: [
+              BoxShadow(
+                color: Color.fromRGBO(0, 0, 0, 0.16),
+                offset: Offset(0, 5),
+                blurRadius: 10.0,
+              )
+            ],
+            borderRadius: BorderRadius.circular(9.0)),
+      ),
+    );
+
+    Widget continueShoppingButton = InkWell(
+      onTap: () async {
+        Navigator.of(context).pop();
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (_) => MainPage()));
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width / 1.5,
+        padding: EdgeInsets.symmetric(vertical: 20.0),
+        margin: EdgeInsets.only(
+            bottom: MediaQuery.of(context).padding.bottom == 0
+                ? 20
+                : MediaQuery.of(context).padding.bottom),
+        child: Center(
+            child: new Text("Continue Shopping",
                 style: const TextStyle(
                     color: const Color(0xfffefefe),
                     fontWeight: FontWeight.w600,
@@ -90,15 +121,18 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
               height: 300,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: products.length,
+                  itemCount: productsInCart.length,
                   itemBuilder: (_, index) {
                     return Row(
                       children: <Widget>[
-                        ShopProduct(products[index],onRemove: (){
-                          setState(() {
-                            products.remove(products[index]);
-                          });
-                        },),
+                        ShopProduct(
+                          productsInCart[index],
+                          onRemove: () {
+                            setState(() {
+                              productsInCart.remove(productsInCart[index]);
+                            });
+                          },
+                        ),
                         index == 4
                             ? SizedBox()
                             : Container(
@@ -109,7 +143,8 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
                     );
                   }),
             ),
-            confirmButton
+            confirmButton,
+            continueShoppingButton
           ],
         ));
   }

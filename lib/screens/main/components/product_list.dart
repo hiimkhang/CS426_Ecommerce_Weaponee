@@ -31,19 +31,19 @@ class ProductList extends StatelessWidget {
         fade: 0.5,
         pagination: SwiperCustomPagination(
           builder: (context, config) {
-            if (config!.itemCount! > 20) {
+            if (config.itemCount > 20) {
               print(
-                  "The itemCount is too big, we suggest use FractionPaginationBuilder instead of DotSwiperPaginationBuilder in this sitituation");
+                  "The itemCount is too big, we suggest use FractionPaginationBuilder instead of DotSwiperPaginationBuilder in this situation");
             }
-            Color activeColor = mediumYellow;
-            Color color = Colors.grey.withOpacity(.3);
+            Color activeColor = galaxyPurple;
+            Color color = Color.fromARGB(255, 125, 117, 234).withOpacity(.3);
             double size = 10.0;
             double space = 5.0;
 
             if (config.indicatorLayout != PageIndicatorLayout.NONE &&
                 config.layout == SwiperLayout.DEFAULT) {
               return new PageIndicator(
-                count: config.itemCount!,
+                count: config.itemCount,
                 controller: config.pageController!,
                 layout: config.indicatorLayout,
                 size: size,
@@ -55,8 +55,8 @@ class ProductList extends StatelessWidget {
 
             List<Widget> dots = [];
 
-            int itemCount = config.itemCount!;
-            int activeIndex = config.activeIndex!;
+            int itemCount = config.itemCount;
+            int activeIndex = config.activeIndex;
 
             for (int i = 0; i < itemCount; ++i) {
               bool active = i == activeIndex;
@@ -112,12 +112,12 @@ class ProductCard extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           Container(
-            margin: const EdgeInsets.only(left: 30),
+            margin: const EdgeInsets.only(right: 40),
             height: height,
             width: width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(24)),
-              color: mediumYellow,
+              color: galaxyPurple,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -126,7 +126,8 @@ class ProductCard extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.favorite_border),
                   onPressed: () {},
-                  color: Colors.white,
+                  highlightColor: Colors.red,
+                  color: Color.fromARGB(255, 249, 248, 248),
                 ),
                 Column(
                   children: <Widget>[
@@ -149,7 +150,7 @@ class ProductCard extends StatelessWidget {
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10),
                               bottomLeft: Radius.circular(10)),
-                          color: Color.fromRGBO(224, 69, 10, 1),
+                          color: Color.fromARGB(255, 210, 21, 21),
                         ),
                         child: Text(
                           '\$${product.price}',
@@ -170,8 +171,8 @@ class ProductCard extends StatelessWidget {
               tag: product.image,
               child: Image.asset(
                 product.image,
-                height: height / 1.7,
-                width: width / 1.4,
+                height: height / 1.4,
+                width: width / 1.35,
                 fit: BoxFit.contain,
               ),
             ),

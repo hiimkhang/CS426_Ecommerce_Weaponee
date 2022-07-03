@@ -142,11 +142,10 @@ class SelectCardPage extends StatelessWidget {
                                       color: Colors.grey[50]),
                                   child: TextField(
                                     textAlign: TextAlign.center,
-                                    keyboardType:
-                                        TextInputType.number,
-                                      inputFormatters:[
-                                        LengthLimitingTextInputFormatter(3),
-                                      ],
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(3),
+                                    ],
                                     decoration: InputDecoration(
                                         contentPadding: EdgeInsets.zero,
                                         hintText: 'CVV',

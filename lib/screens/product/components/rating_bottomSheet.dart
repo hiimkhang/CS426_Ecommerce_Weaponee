@@ -28,17 +28,17 @@ class _RatingBottomSheetState extends State<RatingBottomSheet> {
                 height: 92,
                 width: 92,
                 decoration: BoxDecoration(
-                    color: yellow,
+                    color: darkGrey,
                     shape: BoxShape.circle,
                     boxShadow: shadow,
                     border: Border.all(width: 8.0, color: Colors.white)),
-                child: Image.asset('assets/headphones.png'),
+                child: Image.asset('assets/m9_gold.png'),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
                     horizontal: 72.0, vertical: 16.0),
                 child: Text(
-                  'Boat Rockerz 350 On-Ear Bluetooth Headphones',
+                  'M9 Bayonet Tiger Tooth',
                   style: TextStyle(fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
@@ -66,7 +66,7 @@ class _RatingBottomSheetState extends State<RatingBottomSheet> {
                       ignoreGestures: true,
                       itemSize: 20,
                       allowHalfRating: true,
-                      initialRating: 1,
+                      initialRating: 4,
                       itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
                       ratingWidget: RatingWidget(
                         empty: Icon(Icons.favorite_border,
@@ -116,7 +116,7 @@ class _RatingBottomSheetState extends State<RatingBottomSheet> {
                             child: CircleAvatar(
                               maxRadius: 14,
                               backgroundImage:
-                                  AssetImage('assets/background.jpg'),
+                                  AssetImage('assets/background2.jpg'),
                             ),
                           ),
                           Expanded(
@@ -129,7 +129,7 @@ class _RatingBottomSheetState extends State<RatingBottomSheet> {
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Text(
-                                      'Billy Holand',
+                                      'Khang',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -169,7 +169,7 @@ class _RatingBottomSheetState extends State<RatingBottomSheet> {
                                   ),
                                 ),
                                 Text(
-                                  'Not as I expected! ... I`m really sad',
+                                  'Dao cùn thế, hong làm ăn được gì hết.',
                                   style: TextStyle(
                                     color: Colors.grey,
                                   ),

@@ -18,7 +18,8 @@ class AddAddressForm extends StatelessWidget {
             ),
             child: TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Flat Number/House Number'),
+                  border: InputBorder.none,
+                  hintText: 'Flat Number/House Number'),
             ),
           ),
           Container(

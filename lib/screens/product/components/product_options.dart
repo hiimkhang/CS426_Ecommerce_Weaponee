@@ -1,5 +1,6 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/models/product.dart';
+import 'package:ecommerce_int2/screens/main/main_page.dart';
 import 'package:ecommerce_int2/screens/shop/check_out_page.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +35,7 @@ class ProductOption extends StatelessWidget {
               width: 300,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -42,11 +43,12 @@ class ProductOption extends StatelessWidget {
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: Colors.black,
                             shadows: shadow)),
                   ),
                   InkWell(
                     onTap: () async {
+                      productsInCart.add(product);
                       Navigator.of(context).push(
                           MaterialPageRoute(builder: (_) => CheckOutPage()));
                     },
@@ -73,7 +75,7 @@ class ProductOption extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       scaffoldKey.currentState!.showBottomSheet((context) {
-                        return ShopBottomSheet();
+                        return ShopBottomSheet(product: product);
                       });
                     },
                     child: Container(

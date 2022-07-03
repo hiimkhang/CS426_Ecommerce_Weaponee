@@ -96,7 +96,7 @@ class RequestAmountPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height / 2.3,
                       padding: const EdgeInsets.all(16.0),
                       width: MediaQuery.of(context).size.width,
-                      color: yellow,
+                      color: lightGrey,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
@@ -153,7 +153,7 @@ class RequestAmountPage extends StatelessWidget {
                                   ),
                                 ),
                               )),
-                          Text('You can only send \$54.24',
+                          Text('You can only send \$1000',
                               style: TextStyle(color: Colors.white54)),
                         ],
                       ),
@@ -166,7 +166,7 @@ class RequestAmountPage extends StatelessWidget {
                         child: ListView(
                       children: <Widget>[
                         ListTile(
-                          title: Text('24th December 2018',
+                          title: Text('2nd June 2022',
                               style: TextStyle(
                                   color: Colors.grey[600],
                                   fontWeight: FontWeight.bold)),
@@ -189,7 +189,7 @@ class RequestAmountPage extends StatelessWidget {
                           ),
                         ),
                         ListTile(
-                          title: Text('24th December 2018',
+                          title: Text('2nd June 2022',
                               style: TextStyle(
                                   color: Colors.grey[600],
                                   fontWeight: FontWeight.bold)),
@@ -212,7 +212,7 @@ class RequestAmountPage extends StatelessWidget {
                           ),
                         ),
                         ListTile(
-                          title: Text('24th December 2018',
+                          title: Text('2nd June 2022',
                               style: TextStyle(
                                   color: Colors.grey[600],
                                   fontWeight: FontWeight.bold)),
@@ -235,7 +235,7 @@ class RequestAmountPage extends StatelessWidget {
                           ),
                         ),
                         ListTile(
-                          title: Text('24th December 2018',
+                          title: Text('2nd June 2022',
                               style: TextStyle(
                                   color: Colors.grey[600],
                                   fontWeight: FontWeight.bold)),
@@ -258,7 +258,7 @@ class RequestAmountPage extends StatelessWidget {
                           ),
                         ),
                         ListTile(
-                          title: Text('24th December 2018',
+                          title: Text('2nd June 2022',
                               style: TextStyle(
                                   color: Colors.grey[600],
                                   fontWeight: FontWeight.bold)),

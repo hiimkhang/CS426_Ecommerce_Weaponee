@@ -2,6 +2,7 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/models/product.dart';
 import 'package:ecommerce_int2/screens/address/add_address_page.dart';
+import 'package:ecommerce_int2/screens/main/main_page.dart';
 import 'package:ecommerce_int2/screens/payment/unpaid_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,20 +17,25 @@ class CheckOutPage extends StatefulWidget {
 class _CheckOutPageState extends State<CheckOutPage> {
   SwiperController swiperController = SwiperController();
 
-  List<Product> products = [
-    Product('assets/headphones.png',
-        'Boat roackerz 400 On-Ear Bluetooth Headphones', 'description', 45.3),
-    Product('assets/headphones_2.png',
-        'Boat roackerz 100 On-Ear Bluetooth Headphones', 'description', 22.3),
-    Product('assets/headphones_3.png',
-        'Boat roackerz 300 On-Ear Bluetooth Headphones', 'description', 58.3)
-  ];
+  void initState() {
+    super.initState();
+    if (productsInCart.length != 0)
+      totalPrice = productsInCart.fold(0, (sum, item) => sum + item.price);
+  }
+
+  // List<Product> products = [
+  //   Product('assets/headphones.png',
+  //       'Boat roackerz 400 On-Ear Bluetooth Headphones', 'description', 45.3),
+  //   Product('assets/headphones_2.png',
+  //       'Boat roackerz 100 On-Ear Bluetooth Headphones', 'description', 22.3),
+  //   Product('assets/headphones_3.png',
+  //       'Boat roackerz 300 On-Ear Bluetooth Headphones', 'description', 58.3)
+  // ];
 
   @override
   Widget build(BuildContext context) {
     Widget checkOutButton = InkWell(
-      onTap: () => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (_) => AddAddressPage())),
+      onTap: () {},
       child: Container(
         height: 80,
         width: MediaQuery.of(context).size.width / 1.5,
@@ -82,26 +88,46 @@ class _CheckOutPageState extends State<CheckOutPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 32.0),
+                  padding: EdgeInsets.symmetric(horizontal: 18.0),
                   height: 48.0,
-                  color: yellow,
+                  color: lightGrey,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(
-                        'Subtotal',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
-                      ),
-                      Text(
-                        products.length.toString() + ' items',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
-                      )
+                      Row(children: [
+                        Text(
+                          'Subtotal:   ',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                        Text(
+                          productsInCart.length.toString() + ' items',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                      ]),
+                      Row(children: [
+                        Text(
+                          // add total price function
+                          'Total price:    ',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                        Text(
+                          // totalPrice = cartPrice();
+                          '\$' + cartPrice().toString(),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        )
+                      ])
                     ],
                   ),
                 ),
@@ -110,14 +136,15 @@ class _CheckOutPageState extends State<CheckOutPage> {
                   child: Scrollbar(
                     child: ListView.builder(
                       itemBuilder: (_, index) => ShopItemList(
-                        products[index],
+                        productsInCart[index],
                         onRemove: () {
                           setState(() {
-                            products.remove(products[index]);
+                            productsInCart.remove(productsInCart[index]);
+                            cartPrice();
                           });
                         },
                       ),
-                      itemCount: products.length,
+                      itemCount: productsInCart.length,
                     ),
                   ),
                 ),
@@ -131,20 +158,20 @@ class _CheckOutPageState extends State<CheckOutPage> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Swiper(
-                    itemCount: 2,
-                    itemBuilder: (_, index) {
-                      return CreditCard();
-                    },
-                    scale: 0.8,
-                    controller: swiperController,
-                    viewportFraction: 0.6,
-                    loop: false,
-                    fade: 0.7,
-                  ),
-                ),
+                // SizedBox(
+                //   height: 250,
+                //   child: Swiper(
+                //     itemCount: 2,
+                //     itemBuilder: (_, index) {
+                //       return CreditCard();
+                //     },
+                //     scale: 0.8,
+                //     controller: swiperController,
+                //     viewportFraction: 0.6,
+                //     loop: false,
+                //     fade: 0.7,
+                //   ),
+                // ),
                 SizedBox(height: 24),
                 Center(
                     child: Padding(

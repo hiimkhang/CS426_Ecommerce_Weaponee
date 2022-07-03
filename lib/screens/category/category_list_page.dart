@@ -13,40 +13,16 @@ class CategoryListPage extends StatefulWidget {
 class _CategoryListPageState extends State<CategoryListPage> {
   List<Category> categories = [
     Category(
-      Color(0xffFCE183),
-      Color(0xffF68D7F),
-      'Gadgets',
-      'assets/jeans_5.png',
+      lightGrey,
+      Color.fromARGB(255, 81, 77, 77),
+      'M9 Bayonet',
+      'assets/m9_black2.png',
     ),
     Category(
-      Color(0xffF749A2),
-      Color(0xffFF7375),
-      'Clothes',
-      'assets/jeans_5.png',
-    ),
-    Category(
-      Color(0xff00E9DA),
-      Color(0xff5189EA),
-      'Fashion',
-      'assets/jeans_5.png',
-    ),
-    Category(
-      Color(0xffAF2D68),
-      Color(0xff632376),
-      'Home',
-      'assets/jeans_5.png',
-    ),
-    Category(
-      Color(0xff36E892),
-      Color(0xff33B2B9),
-      'Beauty',
-      'assets/jeans_5.png',
-    ),
-    Category(
-      Color(0xffF123C4),
-      Color(0xff668CEA),
-      'Appliances',
-      'assets/jeans_5.png',
+      Color.fromARGB(255, 172, 94, 176),
+      Color.fromARGB(255, 122, 40, 157),
+      'Karambit',
+      'assets/karambit_purple.png',
     ),
   ];
 
