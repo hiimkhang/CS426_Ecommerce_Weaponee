@@ -34,11 +34,17 @@ class ShopProduct extends StatelessWidget {
               ),
             ),
             Text(
-              '\$${product.price}',
+              '\$${product.price} x ${cart[cart.indexWhere((element) => element.prod == product)].quantity}',
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: darkGrey, fontWeight: FontWeight.bold, fontSize: 18.0),
             ),
+            // Text(
+            //   'Quantity: ${cart[cart.indexWhere((element) => element.prod == product)].quantity}',
+            //   textAlign: TextAlign.right,
+            //   style: TextStyle(
+            //       color: darkGrey, fontWeight: FontWeight.bold, fontSize: 18.0),
+            // ),
           ],
         ));
   }

@@ -1,8 +1,10 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/screens/faq_page.dart';
+import 'package:ecommerce_int2/screens/map/mapScreen.dart';
 import 'package:ecommerce_int2/screens/payment/payment_page.dart';
 import 'package:ecommerce_int2/screens/settings/settings_page.dart';
 import 'package:ecommerce_int2/screens/tracking_page.dart';
+import 'package:ecommerce_int2/screens/map/address.dart';
 import 'package:ecommerce_int2/screens/wallet/wallet_page.dart';
 import 'package:flutter/material.dart';
 
@@ -56,9 +58,10 @@ class ProfilePage extends StatelessWidget {
                           children: <Widget>[
                             IconButton(
                               icon: Image.asset('assets/icons/wallet.png'),
-                              onPressed: () => Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (_) => WalletPage())),
+                              // onPressed: () => Navigator.of(context).push(
+                              //     MaterialPageRoute(
+                              //         builder: (_) => WalletPage())),
+                              onPressed: () {},
                             ),
                             Text(
                               'Wallet',
@@ -70,80 +73,86 @@ class ProfilePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             IconButton(
+                              hoverColor: Colors.red,
                               icon: Image.asset('assets/icons/truck.png'),
                               onPressed: () => Navigator.of(context).push(
                                   MaterialPageRoute(
                                       builder: (_) => TrackingPage())),
+                              // onPressed: () =>
+                              //     Navigator.of(context).push(MaterialPageRoute(
+                              //         builder: (_) => MapScreen(
+                              //               address: listAddresses[1],
+                              //             ))),
                             ),
                             Text(
-                              'Shipped',
+                              'Ship & Map',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            IconButton(
-                              icon: Image.asset('assets/icons/card.png'),
-                              onPressed: () {},
-                            ),
-                            Text(
-                              'Payment',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            IconButton(
-                              icon: Image.asset('assets/icons/contact_us.png'),
-                              onPressed: () {},
-                            ),
-                            Text(
-                              'Support',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
+                        // Column(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   children: <Widget>[
+                        //     IconButton(
+                        //       icon: Image.asset('assets/icons/card.png'),
+                        //       onPressed: () {},
+                        //     ),
+                        //     Text(
+                        //       'Payment',
+                        //       style: TextStyle(fontWeight: FontWeight.bold),
+                        //     )
+                        //   ],
+                        // ),
+                        // Column(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   children: <Widget>[
+                        //     IconButton(
+                        //       icon: Image.asset('assets/icons/contact_us.png'),
+                        //       onPressed: () {},
+                        //     ),
+                        //     Text(
+                        //       'Support',
+                        //       style: TextStyle(fontWeight: FontWeight.bold),
+                        //     )
+                        //   ],
+                        // ),
                       ],
                     ),
                   ),
                 ),
-                ListTile(
-                  title: Text('Settings'),
-                  subtitle: Text('Privacy and logout'),
-                  leading: Image.asset(
-                    'assets/icons/settings_icon.png',
-                    fit: BoxFit.scaleDown,
-                    width: 30,
-                    height: 30,
-                  ),
-                  trailing: Icon(Icons.chevron_right, color: darkGrey),
-                  onTap: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => SettingsPage())),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('Help & Support'),
-                  subtitle: Text('Help center and legal support'),
-                  leading: Image.asset('assets/icons/support.png'),
-                  trailing: Icon(
-                    Icons.chevron_right,
-                    color: darkGrey,
-                  ),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('FAQ'),
-                  subtitle: Text('Questions and Answer'),
-                  leading: Image.asset('assets/icons/faq.png'),
-                  trailing: Icon(Icons.chevron_right, color: darkGrey),
-                  onTap: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => FaqPage())),
-                ),
-                Divider(),
+                // ListTile(
+                //   title: Text('Settings'),
+                //   subtitle: Text('Privacy and logout'),
+                //   leading: Image.asset(
+                //     'assets/icons/settings_icon.png',
+                //     fit: BoxFit.scaleDown,
+                //     width: 30,
+                //     height: 30,
+                //   ),
+                //   trailing: Icon(Icons.chevron_right, color: darkGrey),
+                //   onTap: () => Navigator.of(context)
+                //       .push(MaterialPageRoute(builder: (_) => SettingsPage())),
+                // ),
+                // Divider(),
+                // ListTile(
+                //   title: Text('Help & Support'),
+                //   subtitle: Text('Help center and legal support'),
+                //   leading: Image.asset('assets/icons/support.png'),
+                //   trailing: Icon(
+                //     Icons.chevron_right,
+                //     color: darkGrey,
+                //   ),
+                // ),
+                // Divider(),
+                // ListTile(
+                //   title: Text('FAQ'),
+                //   subtitle: Text('Questions and Answer'),
+                //   leading: Image.asset('assets/icons/faq.png'),
+                //   trailing: Icon(Icons.chevron_right, color: darkGrey),
+                //   onTap: () => Navigator.of(context)
+                //       .push(MaterialPageRoute(builder: (_) => FaqPage())),
+                // ),
+                // Divider(),
               ],
             ),
           ),

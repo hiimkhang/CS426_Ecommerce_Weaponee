@@ -17,7 +17,7 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
-List<String> timelines = ['Hot deal', 'Best of June', 'Best of 2022'];
+List<String> timelines = ['Hot deal', 'Hot knifes', 'Hot guns'];
 String selectedTimeline = 'Hot deal';
 
 List<Product> gun = [
@@ -101,24 +101,7 @@ List<Product> knife = [
 
 List<Product> productsInCart = [];
 List<Cart> cart = [];
-List<Product> products = [
-  Product(
-      'assets/m9_black2.png',
-      'M9 Bayonet Black',
-      'The M9 Bayonet is based off of the Smith and Wesson SW3B, a knife designed after the original real-life M9 Bayonet and features a serrated blade, and is only named after the M9 Bayonet. Originally intended to be mounted on a rifle, it is also well suited to close-quarters combat.',
-      649),
-  Product(
-      'assets/m9_golden.png',
-      'M9 Bayonet Tiger Tooth',
-      'The M9 Bayonet is based off of the Smith and Wesson SW3B, a knife designed after the original real-life M9 Bayonet and features a serrated blade, and is only named after the M9 Bayonet. Originally intended to be mounted on a rifle, it is also well suited to close-quarters combat.',
-      819),
-  Product(
-      'assets/flip_red.png',
-      'Flip Knife Hellfire',
-      'Flip knives sport a Persian-style back-swept blade with an acute point. While the point itself may be fragile, the overall design of the flip knife'
-          's design is surprisingly durable.',
-      399),
-];
+List<Product> products = [knife[1], gun[0], gun[1]];
 var totalPrice = 0.0;
 
 double cartPrice() {
@@ -147,7 +130,7 @@ class _MainPageState extends State<MainPage>
   void initState() {
     super.initState();
     tabController = TabController(length: 2, vsync: this);
-    bottomTabController = TabController(length: 4, vsync: this);
+    bottomTabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -157,11 +140,13 @@ class _MainPageState extends State<MainPage>
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
+          // IconButton(
+          //     onPressed: () => Navigator.of(context)
+          //         .push(MaterialPageRoute(builder: (_) => NotificationsPage())),
+          //     icon: Icon(Icons.notifications)),
           IconButton(
-              onPressed: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => NotificationsPage())),
-              icon: Icon(Icons.notifications)),
-          IconButton(
+              alignment: Alignment.topRight,
+              color: Colors.white,
               onPressed: () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (_) => SearchPage())),
               icon: SvgPicture.asset('assets/icons/search_icon.svg'))
@@ -179,31 +164,14 @@ class _MainPageState extends State<MainPage>
                 onTap: () {
                   setState(() {
                     selectedTimeline = timelines[0];
-                    products = [
-                      Product(
-                          'assets/m9_black2.png',
-                          'M9 Bayonet Blackhole',
-                          'The M9 Bayonet is based off of the Smith and Wesson SW3B, a knife designed after the original real-life M9 Bayonet and features a serrated blade, and is only named after the M9 Bayonet. Originally intended to be mounted on a rifle, it is also well suited to close-quarters combat.',
-                          649),
-                      Product(
-                          'assets/m9_golden.png',
-                          'M9 Bayonet Tiger Tooth',
-                          'The M9 Bayonet is based off of the Smith and Wesson SW3B, a knife designed after the original real-life M9 Bayonet and features a serrated blade, and is only named after the M9 Bayonet. Originally intended to be mounted on a rifle, it is also well suited to close-quarters combat.',
-                          819),
-                      Product(
-                          'assets/flip_red.png',
-                          'Flip Knife Hellfire',
-                          'Flip knives sport a Persian-style back-swept blade with an acute point. While the point itself may be fragile, the overall design of the flip knife'
-                              's design is surprisingly durable.',
-                          399),
-                    ];
+                    products = [knife[1], gun[0], gun[1]];
                   });
                 },
                 child: Text(
                   timelines[0],
                   style: TextStyle(
                       fontSize: timelines[0] == selectedTimeline ? 20 : 14,
-                      color: darkGrey),
+                      color: mediumGrey),
                 ),
               ),
             ),
@@ -235,7 +203,7 @@ class _MainPageState extends State<MainPage>
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: timelines[1] == selectedTimeline ? 20 : 14,
-                        color: darkGrey)),
+                        color: mediumGrey)),
               ),
             ),
             Flexible(
@@ -243,25 +211,14 @@ class _MainPageState extends State<MainPage>
                 onTap: () {
                   setState(() {
                     selectedTimeline = timelines[2];
-                    products = [
-                      Product(
-                          'assets/ak47_red.png',
-                          'AK47 The Empress',
-                          'The AK-47 is a select-fire, gas-operated 7.62×39mm assault rifle developed in the Soviet Union by Mikhail Kalashnikov. The first weapon in the AK (Avtomat Kalashnikova, Russian: Автомат Калашникова, Kalashnikov assault rifle) family of weapons, the AK-47 is succeeded by the modernized AKM in 1959, and the AK-74 in 1974. AK variants were adopted by many forces around the world and saw use in almost every conflict since its development. The AK-47 in Global Offensive is modeled after the AKM.',
-                          2099),
-                      Product(
-                          'assets/m4a4_gold.png',
-                          'M4A4 Golden',
-                          'The M4A4 is based on the Mk. 18 Mod 0 carbine, fitted with an ARMS#40 flip-up rear iron sight and KAC free-float RAS handguard. In-game, the weapon holds 30 rounds and has 90 rounds in reserve.',
-                          2499),
-                    ];
+                    products = [gun[0], gun[1], gun[2]];
                   });
                 },
                 child: Text(timelines[2],
                     textAlign: TextAlign.right,
                     style: TextStyle(
                         fontSize: timelines[2] == selectedTimeline ? 20 : 14,
-                        color: darkGrey)),
+                        color: mediumGrey)),
               ),
             ),
           ],
@@ -276,7 +233,7 @@ class _MainPageState extends State<MainPage>
       unselectedLabelStyle: TextStyle(
         fontSize: 14.0,
       ),
-      labelColor: darkGrey,
+      labelColor: mediumGrey,
       unselectedLabelColor: Color.fromRGBO(0, 0, 0, 0.5),
       isScrollable: true,
       controller: tabController,
@@ -317,7 +274,7 @@ class _MainPageState extends State<MainPage>
                 ),
               ),
             ),
-            CategoryListPage(),
+            // CategoryListPage(),
             CheckOutPage(),
             ProfilePage()
           ],

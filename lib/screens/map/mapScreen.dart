@@ -5,10 +5,15 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ecommerce_int2/screens/map/address.dart';
 
 class MapScreen extends StatefulWidget {
-  final AddressModel address;
+  final AddressModel add1, add2, add3, add4;
+  // final List<AddressModel> chain;
 
   MapScreen({
-    required this.address,
+    required this.add1,
+    required this.add2,
+    required this.add3,
+    required this.add4,
+    // required this.chain,
   });
 
   @override
@@ -24,8 +29,8 @@ class _MapState extends State<MapScreen> {
     super.initState();
 
     _cameraPosition = CameraPosition(
-        target: LatLng(double.parse(widget.address.latitude),
-            double.parse(widget.address.longtitude)),
+        target: LatLng(double.parse(widget.add1.latitude),
+            double.parse(widget.add1.longtitude)),
         zoom: 17);
   }
 
@@ -36,20 +41,21 @@ class _MapState extends State<MapScreen> {
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: lightGrey,
+        backgroundColor: mediumGrey,
         elevation: 0,
-        title: Text('Address page',
+        title: Text('Shop locations',
             style: TextStyle(
-                color: Colors.black,
-                fontSize: 14,
+                color: Colors.white,
+                fontSize: 16,
                 fontWeight: FontWeight.w600)),
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
           icon: Icon(
-            Icons.arrow_back_ios,
+            Icons.arrow_back_ios_new_rounded,
             color: Colors.white,
+            size: 25,
           ),
         ),
       ),
@@ -61,9 +67,21 @@ class _MapState extends State<MapScreen> {
           // ignore: prefer_collection_literals
           markers: {
             Marker(
-              markerId: MarkerId(widget.address.address),
+              markerId: MarkerId(widget.add1.address),
               position: _cameraPosition.target,
-            )
+            ),
+            Marker(
+                markerId: MarkerId(widget.add2.address),
+                position: LatLng(double.parse(widget.add2.latitude),
+                    double.parse(widget.add2.longtitude))),
+            Marker(
+                markerId: MarkerId(widget.add3.address),
+                position: LatLng(double.parse(widget.add3.latitude),
+                    double.parse(widget.add3.longtitude))),
+            Marker(
+                markerId: MarkerId(widget.add4.address),
+                position: LatLng(double.parse(widget.add4.latitude),
+                    double.parse(widget.add4.longtitude))),
           }),
     );
   }

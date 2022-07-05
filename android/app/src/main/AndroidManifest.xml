@@ -9,7 +9,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="Shope"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAFuMytBCXAY0tZIhpaMgPygv4v8wVrO_g"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

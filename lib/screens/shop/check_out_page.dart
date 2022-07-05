@@ -52,7 +52,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
             gradient: mainButton,
             boxShadow: [
               BoxShadow(
-                color: Color.fromRGBO(0, 0, 0, 0.16),
+                color: Color.fromARGB(40, 229, 224, 224),
                 offset: Offset(0, 5),
                 blurRadius: 10.0,
               )
@@ -76,11 +76,11 @@ class _CheckOutPageState extends State<CheckOutPage> {
         elevation: 0.0,
         iconTheme: IconThemeData(color: darkGrey),
         actions: <Widget>[
-          IconButton(
-            icon: Image.asset('assets/icons/denied_wallet.png'),
-            onPressed: () => Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => UnpaidPage())),
-          )
+          // IconButton(
+          //   icon: Image.asset('assets/icons/denied_wallet.png'),
+          //   onPressed: () => Navigator.of(context)
+          //       .push(MaterialPageRoute(builder: (_) => UnpaidPage())),
+          // )
         ],
         title: Text(
           'Checkout',

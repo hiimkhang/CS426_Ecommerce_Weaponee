@@ -39,8 +39,8 @@ class _ProductPageState extends State<ProductPage> {
             boxShadow: [
               BoxShadow(
                 color: Color.fromARGB(255, 235, 229, 229),
-                offset: Offset(0, 5),
-                blurRadius: 10.0,
+                offset: Offset(0, 3),
+                blurRadius: 6.0,
               )
             ],
             borderRadius: BorderRadius.circular(9.0)),

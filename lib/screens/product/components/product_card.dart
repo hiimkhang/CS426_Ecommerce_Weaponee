@@ -17,11 +17,11 @@ class ProductCard extends StatelessWidget {
             height: 250,
             width: MediaQuery.of(context).size.width / 2 - 29,
             decoration: BoxDecoration(
-              // borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderRadius: BorderRadius.all(Radius.circular(15)),
               // color: lightGrey.withOpacity(0.4)),
               boxShadow: [
                 BoxShadow(
-                  color: lightGrey,
+                  color: Color.fromRGBO(255, 255, 255, 0.4),
                   offset: Offset(0, 5),
                   blurRadius: 6.0,
                 ),
@@ -52,17 +52,17 @@ class ProductCard extends StatelessWidget {
                         margin: const EdgeInsets.only(left: 16.0),
                         padding: const EdgeInsets.all(8.0),
                         decoration: BoxDecoration(
-                            color: mediumGrey.withOpacity(0.51),
+                            color: mediumGrey.withOpacity(1),
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),
                                 bottomLeft: Radius.circular(10))),
                         child: Text(
                           product.name,
-                          textAlign: TextAlign.right,
+                          textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.white,
-                          ),
+                              fontSize: 12,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w200),
                         )),
                   ),
                 )

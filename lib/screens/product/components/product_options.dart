@@ -64,6 +64,13 @@ class ProductOption extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.red,
                           gradient: mainButton,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 235, 229, 229),
+                              offset: Offset(0, 3),
+                              blurRadius: 6.0,
+                            )
+                          ],
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10.0),
                               bottomLeft: Radius.circular(10.0))),
@@ -92,6 +99,13 @@ class ProductOption extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.red,
                           gradient: mainButton,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 235, 229, 229),
+                              offset: Offset(0, 3),
+                              blurRadius: 6.0,
+                            )
+                          ],
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10.0),
                               bottomLeft: Radius.circular(10.0))),

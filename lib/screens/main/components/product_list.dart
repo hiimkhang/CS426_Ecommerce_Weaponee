@@ -27,7 +27,7 @@ class ProductList extends StatelessWidget {
         scale: 0.8,
         controller: swiperController,
         viewportFraction: 0.6,
-        loop: false,
+        loop: true,
         fade: 0.5,
         pagination: SwiperCustomPagination(
           builder: (context, config) {
@@ -36,7 +36,7 @@ class ProductList extends StatelessWidget {
                   "The itemCount is too big, we suggest use FractionPaginationBuilder instead of DotSwiperPaginationBuilder in this situation");
             }
             Color activeColor = galaxyPurple;
-            Color color = Color.fromARGB(255, 125, 117, 234).withOpacity(.3);
+            Color color = mediumGrey.withOpacity(0.3);
             double size = 10.0;
             double space = 5.0;
 
@@ -117,7 +117,7 @@ class ProductCard extends StatelessWidget {
             width: width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(24)),
-              color: galaxyPurple,
+              color: Color.fromARGB(255, 96, 93, 93),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,

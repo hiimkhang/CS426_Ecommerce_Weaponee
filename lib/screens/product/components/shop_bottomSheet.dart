@@ -60,9 +60,9 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
             gradient: mainButton,
             boxShadow: [
               BoxShadow(
-                color: Color.fromRGBO(0, 0, 0, 0.16),
-                offset: Offset(0, 5),
-                blurRadius: 10.0,
+                color: Color.fromARGB(255, 235, 229, 229),
+                offset: Offset(0, 3),
+                blurRadius: 6.0,
               )
             ],
             borderRadius: BorderRadius.circular(9.0)),
@@ -111,19 +111,19 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Align(
-              alignment: Alignment.topRight,
-              child: IconButton(
-                icon: Image.asset(
-                  'assets/box.png',
-                  height: 24,
-                  width: 24.0,
-                  fit: BoxFit.cover,
-                ),
-                onPressed: () {},
-                iconSize: 48,
-              ),
-            ),
+            // Align(
+            //   alignment: Alignment.topRight,
+            //   child: IconButton(
+            //     icon: Image.asset(
+            //       'assets/box.png',
+            //       height: 24,
+            //       width: 24.0,
+            //       fit: BoxFit.cover,
+            //     ),
+            //     onPressed: () {},
+            //     iconSize: 48,
+            //   ),
+            // ),
             SizedBox(
               height: 300,
               child: ListView.builder(

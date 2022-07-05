@@ -1,6 +1,9 @@
 import 'package:ecommerce_int2/app_properties.dart';
+import 'package:ecommerce_int2/screens/map/mapScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ecommerce_int2/screens/map/address.dart';
+import 'package:ecommerce_int2/screens/map/mapScreen.dart';
 
 class TrackingPage extends StatefulWidget {
   @override
@@ -9,25 +12,25 @@ class TrackingPage extends StatefulWidget {
 
 class _TrackingPageState extends State<TrackingPage> {
   final List<Location> locations = [
-    Location('Kolkata Facility', DateTime(2019, 6, 5, 5, 23, 4),
+    Location('Nhà của Khang', DateTime(2022, 7, 3, 5, 23, 4),
         showHour: false, isHere: false, passed: true),
-    Location('Hyderabad Facility', DateTime(2019, 6, 6, 5, 23, 4),
+    Location('Nhà của Quốc', DateTime(2022, 7, 4, 5, 23, 4),
         showHour: false, isHere: false, passed: true),
     Location(
-      'Chennai Facility',
-      DateTime(2019, 6, 9, 5, 23, 4),
+      'VNUHCM US',
+      DateTime(2022, 7, 5, 5, 23, 4),
       showHour: false,
       isHere: true,
     ),
     Location(
-      'Kerala Facility',
-      DateTime(2019, 6, 10, 5, 23, 4),
-      showHour: true,
+      'Nhà của bạn',
+      DateTime(2022, 7, 8, 5, 23, 4),
+      showHour: false,
       isHere: false,
     ),
   ];
 
-  String selectedProduct = 'Boat Headphones Bass boost 100v';
+  String selectedProduct = 'M9 Bayonet Tiger Tooth';
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +48,7 @@ class _TrackingPageState extends State<TrackingPage> {
               brightness: Brightness.light,
               iconTheme: IconThemeData(color: Colors.grey),
               title: Text(
-                'Shipped',
+                'Ship and Map',
                 style: TextStyle(
                   color: darkGrey,
                   fontSize: 22,
@@ -64,27 +67,20 @@ class _TrackingPageState extends State<TrackingPage> {
                       margin: const EdgeInsets.symmetric(horizontal: 16.0),
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: lightGrey,
                           borderRadius: BorderRadius.all(Radius.circular(5))),
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton(
-                          items: <String>[
-                            'Boat Headphones Bass boost 100v',
-                            'Boat Headphones Bass boost 200v',
-                            'Boat Headphones Bass boost 300v',
-                            'Boat Headphones Bass boost 400v',
-                            'Boat Headphones Bass boost 500v',
-                            'Boat Headphones Bass double boosting 600v'
-                          ].map((val) {
+                          items: <String>['M9 Bayonet Tiger Tooth'].map((val) {
                             return DropdownMenuItem<String>(
                               value: val,
                               child: Container(
-                                  color: Colors.white,
+                                  color: lightGrey,
                                   child: Align(
-                                      alignment: Alignment.centerLeft,
+                                      alignment: Alignment.center,
                                       child: Text(
                                         val,
-                                        maxLines: 2,
+                                        maxLines: 1,
                                         semanticsLabel: '...',
                                         overflow: TextOverflow.ellipsis,
                                       ))),
@@ -96,7 +92,7 @@ class _TrackingPageState extends State<TrackingPage> {
                             });
                           },
                           value: selectedProduct,
-                          isExpanded: true,
+                          isExpanded: false,
                           icon: Icon(Icons.keyboard_arrow_down),
                           elevation: 0,
                         ),
@@ -140,6 +136,39 @@ class _TrackingPageState extends State<TrackingPage> {
                         ),
                       ),
                     ),
+                    Align(
+                        alignment: Alignment.center,
+                        child: InkWell(
+                            onTap: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (_) => MapScreen(
+                                        add1: listAddresses[0],
+                                        add2: listAddresses[1],
+                                        add3: listAddresses[2],
+                                        add4: listAddresses[3]))),
+                            child: Container(
+                              alignment: Alignment.bottomRight,
+                              height: 80,
+                              width: MediaQuery.of(context).size.width / 1.5,
+                              decoration: BoxDecoration(
+                                  gradient: lightButton,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color.fromRGBO(0, 0, 0, 0.16),
+                                      offset: Offset(0, 5),
+                                      blurRadius: 10.0,
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(9.0)),
+                              child: Center(
+                                child: Text("View shop locations",
+                                    style: const TextStyle(
+                                        color: const Color(0xfffefefe),
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 20.0)),
+                              ),
+                            ))),
                   ],
                 ),
               ),
