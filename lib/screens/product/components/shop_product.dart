@@ -1,5 +1,6 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/models/product.dart';
+import 'package:ecommerce_int2/screens/main/main_page.dart';
 import 'package:flutter/material.dart';
 
 class ShopProduct extends StatelessWidget {
@@ -19,7 +20,7 @@ class ShopProduct extends StatelessWidget {
         child: Column(
           children: <Widget>[
             ShopProductDisplay(
-              product,
+              cart[cart.indexWhere((element) => element.prod == product)],
               onPressed: onRemove,
             ),
             Padding(
@@ -44,10 +45,11 @@ class ShopProduct extends StatelessWidget {
 }
 
 class ShopProductDisplay extends StatelessWidget {
-  final Product product;
+  // final Product product;
+  final Cart carts;
   final VoidCallback onPressed;
 
-  const ShopProductDisplay(this.product, {required this.onPressed});
+  const ShopProductDisplay(this.carts, {required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +75,8 @@ class ShopProductDisplay extends StatelessWidget {
               height: 80,
               width: 80,
               child: Image.asset(
-                '${product.image}',
+                // '${product.image}',
+                '${carts.prod.image}',
                 fit: BoxFit.contain,
               )),
         ),

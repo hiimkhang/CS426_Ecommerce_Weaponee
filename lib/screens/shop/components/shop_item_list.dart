@@ -1,15 +1,21 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/models/product.dart';
+import 'package:ecommerce_int2/screens/main/main_page.dart';
 import 'package:ecommerce_int2/screens/product/components/color_list.dart';
 import 'package:ecommerce_int2/screens/product/components/shop_product.dart';
+import 'package:ecommerce_int2/screens/shop/check_out_page.dart';
 import 'package:flutter/material.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class ShopItemList extends StatefulWidget {
-  final Product product;
+  // final Product product;
+  final Cart carts;
   final VoidCallback onRemove;
 
-  ShopItemList(this.product, {required this.onRemove});
+  final Function() notifyParent;
+
+  ShopItemList(this.carts,
+      {required this.onRemove, required this.notifyParent});
 
   @override
   _ShopItemListState createState() => _ShopItemListState();
@@ -40,17 +46,18 @@ class _ShopItemListState extends State<ShopItemList> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.only(top: 12.0, right: 12.0),
+                        padding: EdgeInsets.only(top: 12.0, left: 70.0),
                         width: 200,
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              widget.product.name,
-                              textAlign: TextAlign.right,
+                              // widget.product.name,
+                              widget.carts.prod.name,
+                              textAlign: TextAlign.end,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 12,
+                                fontSize: 14,
                                 color: darkGrey,
                               ),
                             ),
@@ -64,10 +71,11 @@ class _ShopItemListState extends State<ShopItemList> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
-                                    ColorOption(Colors.red),
+                                    // ColorOption(Colors.red),
                                     Text(
-                                      '\$${widget.product.price}',
-                                      textAlign: TextAlign.center,
+                                      // '\$${widget.product.price}',
+                                      '\$${widget.carts.prod.price * widget.carts.quantity}',
+                                      textAlign: TextAlign.end,
                                       style: TextStyle(
                                           color: darkGrey,
                                           fontWeight: FontWeight.bold,
@@ -96,23 +104,26 @@ class _ShopItemListState extends State<ShopItemList> {
                                 ),
                               )),
                           child: NumberPicker(
-                            value: quantity,
+                            value: widget.carts.quantity,
                             minValue: 1,
                             maxValue: 10,
                             onChanged: (value) {
                               setState(() {
-                                quantity = value;
+                                widget.carts.quantity = value;
+                                widget.notifyParent();
                               });
                             },
                           ))
                     ])),
           ),
           Positioned(
-              top: 5,
-              child: ShopProductDisplay(
-                widget.product,
-                onPressed: widget.onRemove,
-              )),
+            top: 5,
+            child: ShopProductDisplay(
+              // widget.product,
+              widget.carts,
+              onPressed: widget.onRemove,
+            ),
+          ),
         ],
       ),
     );

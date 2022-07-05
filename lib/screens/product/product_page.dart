@@ -38,7 +38,7 @@ class _ProductPageState extends State<ProductPage> {
             gradient: mainButton,
             boxShadow: [
               BoxShadow(
-                color: Color.fromRGBO(0, 0, 0, 0.16),
+                color: Color.fromARGB(255, 235, 229, 229),
                 offset: Offset(0, 5),
                 blurRadius: 10.0,
               )
@@ -56,11 +56,11 @@ class _ProductPageState extends State<ProductPage> {
     );
 
     return Scaffold(
-      backgroundColor: lightGrey,
+      backgroundColor: mediumGrey,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(0, 240, 235, 235),
         elevation: 0.0,
-        iconTheme: IconThemeData(color: darkGrey),
+        iconTheme: IconThemeData(color: Colors.white),
         actions: <Widget>[
           IconButton(
             icon: new SvgPicture.asset(
@@ -154,8 +154,8 @@ class _ProductPageState extends State<ProductPage> {
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                       colors: [
-                    Color.fromRGBO(255, 255, 255, 0),
-                    Color.fromARGB(126, 22, 22, 22),
+                    Color.fromARGB(0, 70, 68, 68),
+                    Color.fromARGB(158, 0, 0, 0),
                     Color.fromARGB(255, 26, 26, 26),
                   ],
                       begin: FractionalOffset.topCenter,

@@ -3,6 +3,7 @@ import 'package:ecommerce_int2/screens/product/components/rating_bottomSheet.dar
 import 'package:ecommerce_int2/screens/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ecommerce_int2/screens/main/main_page.dart';
 
 import '../../app_properties.dart';
 import 'components/color_list.dart';
@@ -11,8 +12,9 @@ import 'components/product_options.dart';
 
 class ViewProductPage extends StatefulWidget {
   final Product product;
+  final Cart? carts;
 
-  ViewProductPage({required this.product});
+  ViewProductPage({required this.product, this.carts});
 
   @override
   _ViewProductPageState createState() => _ViewProductPageState();
@@ -20,7 +22,7 @@ class ViewProductPage extends StatefulWidget {
 
 class _ViewProductPageState extends State<ViewProductPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  late Product product;
+  Product? product;
 
   int active = 0;
 
@@ -64,17 +66,17 @@ class _ViewProductPageState extends State<ViewProductPage> {
         maxLines: 5,
         semanticsLabel: '...',
         overflow: TextOverflow.ellipsis,
-        style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+        style: TextStyle(color: Colors.white),
       ),
     );
 
     return Scaffold(
         key: _scaffoldKey,
-        backgroundColor: lightGrey,
+        backgroundColor: mediumGrey,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Color.fromARGB(0, 188, 17, 17),
           elevation: 0.0,
-          iconTheme: IconThemeData(color: darkGrey),
+          iconTheme: IconThemeData(color: Colors.white),
           actions: <Widget>[
             IconButton(
               icon: new SvgPicture.asset(
@@ -131,7 +133,10 @@ class _ViewProductPageState extends State<ViewProductPage> {
                     ),
                   ]),
                 ),
-                MoreProducts()
+                MoreProducts(
+                  product: widget.product,
+                )
+                // MottoProducts()
               ],
             ),
           ),

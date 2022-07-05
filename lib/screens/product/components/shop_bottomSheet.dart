@@ -25,6 +25,13 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
   void initState() {
     super.initState();
     productsInCart.add(product);
+
+    var indx = cart.indexWhere((element) => element.prod == product);
+
+    if (indx != -1)
+      cart[indx].quantity++;
+    else
+      cart.add(Cart(product, 1));
   }
 
   @override
@@ -121,15 +128,20 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
               height: 300,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: productsInCart.length,
+                  itemCount: cart.length,
                   itemBuilder: (_, index) {
                     return Row(
                       children: <Widget>[
                         ShopProduct(
-                          productsInCart[index],
+                          // productsInCart[index],
+                          cart[index].prod,
                           onRemove: () {
                             setState(() {
-                              productsInCart.remove(productsInCart[index]);
+                              // productsInCart.remove(productsInCart[index]);
+                              if (cart[index].quantity == 1)
+                                cart.remove(cart[index]);
+                              else
+                                cart[index].quantity--;
                             });
                           },
                         ),

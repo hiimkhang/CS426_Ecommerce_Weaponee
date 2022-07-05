@@ -19,8 +19,17 @@ class _CheckOutPageState extends State<CheckOutPage> {
 
   void initState() {
     super.initState();
-    if (productsInCart.length != 0)
-      totalPrice = productsInCart.fold(0, (sum, item) => sum + item.price);
+    // if (productsInCart.length != 0)
+    //   totalPrice = productsInCart.fold(0, (sum, item) => sum + item.price);
+    if (cart.length != 0)
+      totalPrice =
+          cart.fold(0, (sum, item) => sum + item.prod.price * item.quantity);
+    else
+      totalPrice = 0;
+  }
+
+  refresh() {
+    setState(() {});
   }
 
   // List<Product> products = [
@@ -103,7 +112,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
                               fontSize: 16),
                         ),
                         Text(
-                          productsInCart.length.toString() + ' items',
+                          // productsInCart.length.toString() + ' items',
+                          cart.length.toString() + ' items',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -121,7 +131,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                         ),
                         Text(
                           // totalPrice = cartPrice();
-                          '\$' + cartPrice().toString(),
+                          '\$' + cartTotalPrice().toString(),
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -135,17 +145,25 @@ class _CheckOutPageState extends State<CheckOutPage> {
                   height: 300,
                   child: Scrollbar(
                     child: ListView.builder(
-                      itemBuilder: (_, index) => ShopItemList(
-                        productsInCart[index],
-                        onRemove: () {
-                          setState(() {
-                            productsInCart.remove(productsInCart[index]);
-                            cartPrice();
-                          });
-                        },
-                      ),
-                      itemCount: productsInCart.length,
-                    ),
+                        itemBuilder: (_, index) => ShopItemList(
+                              // productsInCart[index],
+                              // cart[cart.indexWhere((element) =>
+                              //     element.prod == productsInCart[index])],
+                              cart[index],
+                              onRemove: () {
+                                setState(() {
+                                  // cart.remove(cart[cart.indexWhere((element) =>
+                                  //     element.prod == productsInCart[index])]);
+                                  // productsInCart.remove(productsInCart[index]);
+                                  cart.remove(cart[index]);
+                                  // cartTotalPrice();
+                                });
+                              },
+                              notifyParent: () {
+                                refresh();
+                              },
+                            ),
+                        itemCount: cart.length),
                   ),
                 ),
                 Padding(

@@ -131,8 +131,10 @@ class PromoItem extends StatelessWidget {
           Positioned(
             top: 5,
             child: ShopProductDisplay(
-              Product('assets/m9_green.png', 'M9 Bayonet Crystal',
-                  'description', 749),
+              Cart(
+                  Product('assets/m9_green.png', 'M9 Bayonet Crystal',
+                      'description', 749),
+                  1),
               onPressed: () {},
             ),
           ),

@@ -18,8 +18,7 @@ class _IntroPageState extends State<IntroPage> {
 //      width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             color: Color.fromARGB(255, 220, 211, 211),
-            image:
-                DecorationImage(image: AssetImage('assets/background2.png'))),
+            image: DecorationImage(image: AssetImage('assets/background.png'))),
         child: Stack(
           children: <Widget>[
             PageView(

@@ -6,3 +6,10 @@ class Product {
 
   Product(this.image, this.name, this.description, this.price);
 }
+
+class Cart {
+  Product prod;
+  int quantity;
+
+  Cart(this.prod, this.quantity);
+}

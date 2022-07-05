@@ -7,6 +7,7 @@ const Color transparentYellow = Color.fromRGBO(253, 184, 70, 0.7);
 const Color darkGrey = Color(0xff202020);
 const Color galaxyPurple = Color.fromARGB(255, 92, 92, 98);
 const Color lightGrey = Color.fromARGB(255, 149, 149, 158);
+const Color mediumGrey = Color.fromARGB(255, 49, 48, 50);
 
 const LinearGradient mainButton = LinearGradient(colors: [
   darkGrey,

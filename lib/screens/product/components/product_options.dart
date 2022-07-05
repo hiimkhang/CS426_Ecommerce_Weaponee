@@ -40,15 +40,22 @@ class ProductOption extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     child: Text(product.name,
-                        textAlign: TextAlign.right,
+                        textAlign: TextAlign.end,
                         style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                            fontSize: 15,
                             shadows: shadow)),
                   ),
                   InkWell(
                     onTap: () async {
+                      var indx =
+                          cart.indexWhere((element) => element.prod == product);
                       productsInCart.add(product);
+                      if (indx != -1)
+                        cart[indx].quantity++;
+                      else
+                        cart.add(Cart(product, 1));
                       Navigator.of(context).push(
                           MaterialPageRoute(builder: (_) => CheckOutPage()));
                     },
@@ -67,6 +74,8 @@ class ProductOption extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
+                            shadows: shadow,
+                            fontSize: 16,
                           ),
                         ),
                       ),
@@ -93,6 +102,7 @@ class ProductOption extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
+                            fontSize: 16,
                           ),
                         ),
                       ),
